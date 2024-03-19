@@ -27,5 +27,20 @@ jobs:
             path: ~/.m2
             key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
             restore-keys: ${{ runner.os }}-m2
+      - name: Install dependencies
+        run: |
+          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+            sudo -E apt-get update
+            sudo -E apt-get install -y maven
+            sudo -E apt-get install -y openjdk-17-jdk
+          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
+            brew update
+            brew install maven
+            brew install adoptopenjdk17
+          elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
+            choco install maven
+            choco install openjdk-17
+          fi
+          ./mvnw dependency:resolve -B
       - name: Test with Maven
         run: ./mvnw test -B -V --no-transfer-progress -D"license.skip=true"

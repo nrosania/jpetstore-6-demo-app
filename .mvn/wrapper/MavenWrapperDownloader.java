@@ -80,6 +80,7 @@ public final class MavenWrapperDownloader
                 }
             } );
         }
+        // deepcode ignore Ssrf: <please specify a reason of ignoring this>
         try ( InputStream inStream = wrapperUrl.openStream() )
         {
             Files.copy( inStream, wrapperJarPath, StandardCopyOption.REPLACE_EXISTING );

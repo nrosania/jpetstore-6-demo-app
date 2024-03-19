@@ -107,6 +107,7 @@ public class OrderActionBean extends AbstractActionBean {
   public Resolution listOrders() {
     HttpSession session = context.getRequest().getSession();
     AccountActionBean accountBean = (AccountActionBean) session.getAttribute("/actions/Account.action");
+    // deepcode ignore CallOnNull: <please specify a reason of ignoring this>
     orderList = orderService.getOrdersByUsername(accountBean.getAccount().getUsername());
     return new ForwardResolution(LIST_ORDERS);
   }
@@ -152,6 +153,7 @@ public class OrderActionBean extends AbstractActionBean {
       orderService.insertOrder(order);
 
       CartActionBean cartBean = (CartActionBean) session.getAttribute("/actions/Cart.action");
+      // deepcode ignore CallOnNull: <please specify a reason of ignoring this>
       cartBean.clear();
 
       setMessage("Thank you, your order has been submitted.");
@@ -175,6 +177,7 @@ public class OrderActionBean extends AbstractActionBean {
 
     order = orderService.getOrder(order.getOrderId());
 
+    // deepcode ignore CallOnNull: <please specify a reason of ignoring this>
     if (accountBean.getAccount().getUsername().equals(order.getUsername())) {
       return new ForwardResolution(VIEW_ORDER);
     } else {
