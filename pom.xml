@@ -24,7 +24,7 @@
     <groupId>org.mybatis</groupId>
     <artifactId>mybatis-parent</artifactId>
     <version>42</version>
-    <relativePath />
+    <relativePath/>
   </parent>
 
   <groupId>org.mybatis</groupId>
@@ -60,8 +60,8 @@
   <properties>
     <cargo.maven.containerId>tomcat${tomcat.major-version}x</cargo.maven.containerId>
     <cargo.maven.containerUrl>https://archive.apache.org/dist/tomcat/tomcat-${tomcat.major-version}/v${tomcat.version}/bin/apache-tomcat-${tomcat.version}.zip</cargo.maven.containerUrl>
-    <tomcat.major-version />
-    <tomcat.version />
+    <tomcat.major-version/>
+    <tomcat.version/>
 
     <cargo-maven3-plugin.version>1.10.12</cargo-maven3-plugin.version>
     <clirr.comparisonVersion>6.0.2</clirr.comparisonVersion>
@@ -107,7 +107,7 @@
     <dependency>
       <groupId>net.sourceforge.stripes</groupId>
       <artifactId>stripes</artifactId>
-      <version>1.6.0</version>
+      <version>1.7.0-async-beta</version>
       <exclusions>
         <exclusion>
           <groupId>commons-logging</groupId>
