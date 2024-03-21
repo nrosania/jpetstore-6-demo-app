@@ -2,5 +2,6 @@
     "java.compile.nullAnalysis.mode": "automatic",
     "ansible.python.interpreterPath": "/usr/bin/python3",
     "github-actions.use-enterprise": true,
-    "github-actions.workflows.pinned.refresh.enabled": true
+    "github-actions.workflows.pinned.refresh.enabled": true,
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
